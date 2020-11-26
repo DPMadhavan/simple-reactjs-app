@@ -26,5 +26,6 @@ pipeline {
                 //sh 'docker exec -it 
                 //sh 'npm start'
             }
+         }
     }
 }
