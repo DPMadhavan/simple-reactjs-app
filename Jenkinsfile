@@ -13,11 +13,18 @@ pipeline {
         HOME = '.'
         }
     stages {
-        stage('Build') { 
+        stage('Build/install the app') { 
             steps {
                 sh 'npm install' 
-                sh 'npm start'
+                //sh 'npm start'
             }
         }
+         stage('Docker build and deploy') { 
+            steps {
+                sh 'docker build . -t reactimage' 
+                sh 'docker run reactimage'
+                //sh 'docker exec -it 
+                //sh 'npm start'
+            }
     }
 }
